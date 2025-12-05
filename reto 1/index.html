@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TecnoSmart - Repuestos de Computador</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="TecnoSmart - Venta de repuestos de computadores: RAM, SSD, pantallas, fuentes y más." />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <!-- Si tienes el logo generado, reemplaza el src con la ruta del archivo -->
+      <img src="generated-image.png" alt="TecnoSmart logo" class="logo" onerror="this.style.display='none'"/>
+      <h1>TecnoSmart</h1>
+      <p class="tagline">Repuestos de Computador</p>
+    </div>
+    <div class="controls">
+      <input id="searchInput" type="search" placeholder="Buscar por modelo, categoría o marca..." />
+      <button id="btnCart" class="cart-btn">Carrito (<span id="cartCount">0</span>)</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- Home -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <h2>Repuestos originales para tu computador</h2>
+        <p>Memorias, SSD, placas madre, fuentes, pantallas y accesorios.</p>
+        <button id="ctaShop">Comprar ahora</button>
+      </div>
+
+      <div class="categories">
+        <h3>Categorías</h3>
+        <div id="categoryList" class="chips"></div>
+      </div>
+
+      <div class="featured">
+        <h3>Productos destacados</h3>
+        <div id="productsGrid" class="grid"></div>
+      </div>
+    </section>
+
+    <!-- Product detail -->
+    <section id="product" class="page">
+      <button class="back-btn" data-target="home">← Volver</button>
+      <div id="productDetail"></div>
+    </section>
+
+    <!-- Cart -->
+    <section id="cart" class="page">
+      <button class="back-btn" data-target="home">← Volver</button>
+      <h2>Carrito</h2>
+      <div id="cartItems"></div>
+      <div class="cart-footer">
+        <div>Subtotal: <strong id="cartTotal">$0</strong></div>
+        <button id="btnCheckout">Finalizar compra</button>
+      </div>
+    </section>
+
+    <!-- Checkout -->
+    <section id="checkout" class="page">
+      <button class="back-btn" data-target="cart">← Volver al carrito</button>
+      <h2>Checkout</h2>
+      <form id="checkoutForm" class="checkout-form">
+        <label>Nombre completo
+          <input name="name" required />
+        </label>
+        <label>Correo electrónico
+          <input name="email" type="email" required />
+        </label>
+        <label>Dirección
+          <input name="address" required />
+        </label>
+        <label>Ciudad
+          <input name="city" required />
+        </label>
+        <label>Método de pago
+          <select name="payment" required>
+            <option value="">Seleccione...</option>
+            <option value="card">Tarjeta</option>
+            <option value="pse">PSE</option>
+            <option value="nequi">Nequi/Daviplata</option>
+            <option value="cod">Contraentrega</option>
+          </select>
+        </label>
+
+        <div class="order-summary">
+          <h4>Resumen del pedido</h4>
+          <div id="checkoutSummary"></div>
+        </div>
+
+        <button type="submit" class="confirm-btn">Confirmar compra</button>
+      </form>
+    </section>
+
+    <!-- Message modal simple -->
+    <div id="toast" class="toast"></div>
+  </main>
+
+  <footer class="app-footer">
+    <small>© <span id="year"></span> TecnoSmart • Repuestos de Computador</small>
+  </footer>
+
+  <script src="java/script.js"></script>
+</body>
+</html>
